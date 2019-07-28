@@ -99,7 +99,7 @@ For any other server side error response will contain HTTP 500 error code. So wh
 
 A swagger documentation is also provided so that ,one can look into in deail about the request and response structure and data types and formats,
 
-Swagger documentation is avaiable in http://<your-machine-ip>/swagger-ui.html url.
+Swagger documentation is avaiable in http://your-machine-ip/swagger-ui.html url.
   
 
 # Assumptions 
