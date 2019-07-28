@@ -1,4 +1,4 @@
-# Annuity Replayment Schedule
+ # Annuity Replayment Schedule
 
 This small guide will help user of this project / tool to download, compile, test and run annuity processing applicatiom.
 
@@ -38,77 +38,67 @@ To execute the application kindly go to target folder mentioned above or you can
 
 java -jar annuitypayment-0.0.1.jar
 
-# Port 
+# Application Access / Service Execution
 
-By default application is running in 8080 port. Kindly make sure port is available .
+      Port         : By default application runs on port 8080 . Kindly make sure the port is available
+      URL          : Service is available in http://your-machineip:8080/replaymentschudele url 
+      HTTP Method  : POST
+      Media Type   : application/json
+      Security     : Currently no security is configured , so no need for any HTTP Basic or Transport layer security .  
+      Sample Request: 
 
-# Execution 
+        Following is a sample request to test the service . 
 
-Once you able to execute this , you can use any standard Rest client tool to use it . 
+         {
+            "loanAmount": "5000",
+            "nominalRate": "5.0",
+            "duration": 24,
+            "startDate": "2018-01-01T00:00:01Z"
+            }
 
-Service is available in below URL 
-http://your-machineip/replaymentschudele
-
-   # Service's HTTP Method is: Post.
-
-   # Security : Currently no security is configured so no need for any HTTP Basic or Transport layer security.
- 
-   #  Sample Request
-  Following is a sample request to test the service . 
-
-    {
-    "loanAmount": "5000",
-    "nominalRate": "5.0",
-    "duration": 24,
-    "startDate": "2018-01-01T00:00:01Z"
-    }
-
-All fields are mandatory , input validation is provided in the application so wrong value will give a BAD_REQUEST error with HTTP 400 error code.
-For succes you will receive a HTTP 200 success code along with below structure response 
-   # Media Type
-    application/json
-   # Successful Response
-     http status code 200
-     
-     Response body is below
-
-{
-[
- {
- "borrowerPaymentAmount": "219.36",
- "date": "2018-01-01T00:00:00Z",
- "initialOutstandingPrincipal": "5000.00",
- "interest": "20.83",
- "principal": "198.53",
- "remainingOutstandingPrincipal": "4801.47",
- },
- {
- "borrowerPaymentAmount": "219.36",
- "date": "2018-02-01T00:00:00Z",
- "initialOutstandingPrincipal": "4801.47",
- "interest": "20.01",
- "principal": "199.35",
- "remainingOutstandingPrincipal": "4602.12",
- },
-...
- {
- "borrowerPaymentAmount": "219.28",
- "date": "2020-01-01T00:00:00Z",
- "initialOutstandingPrincipal": "218.37",
- "interest": "0.91",
- "principal": "218.37",
- "remainingOutstandingPrincipal": "0",
- }
-]
-}
-
- # Data Validation Failure
-   For invalid input HTTP Status code is 400 
+            All fields are mandatory , input validation is provided in the application so wrong value will give a BAD_REQUEST error with             HTTP 400 error code.
    
- # Other Server Error
+      # Response Code : For successful response , HTTP 200 status code will be retured.
+      
+      Response Body : Following is the successful response body 
+     
+     
+     
+            {
+            [
+             {
+             "borrowerPaymentAmount": "219.36",
+             "date": "2018-01-01T00:00:00Z",
+             "initialOutstandingPrincipal": "5000.00",
+             "interest": "20.83",
+             "principal": "198.53",
+             "remainingOutstandingPrincipal": "4801.47",
+             },
+             {
+             "borrowerPaymentAmount": "219.36",
+             "date": "2018-02-01T00:00:00Z",
+             "initialOutstandingPrincipal": "4801.47",
+             "interest": "20.01",
+             "principal": "199.35",
+             "remainingOutstandingPrincipal": "4602.12",
+             },
+            ...
+             {
+             "borrowerPaymentAmount": "219.28",
+             "date": "2020-01-01T00:00:00Z",
+             "initialOutstandingPrincipal": "218.37",
+             "interest": "0.91",
+             "principal": "218.37",
+             "remainingOutstandingPrincipal": "0",
+             }
+            ]
+            }
+         
+         # Validation Failuer : For input validation failure HTTP Status 400 will be retuned. 
+            
+         # Other Server Error  : For Other server side error HTTP status 500 will be returned.
  
-   For any other server side error response will contain HTTP 500 error code. So while integrating the tool one should and must check  http 200 code for success and any other code faiilure.
-  
+ 
   # API Documentations
   A swagger documentation is also provided so that ,one can look into in deail about the request and response structure and data types  and formats,
 
