@@ -47,7 +47,7 @@ By default application is running in 8080 port. Kindly make sure port is availab
 Once you able to execute this , you can use any standard Rest client tool to use it . 
 
 Service is available in below URL 
-http://<your-mcip>/replaymentschudele
+http://your-machineip/replaymentschudele
 
 Service's HTTP Method is Post.
 
