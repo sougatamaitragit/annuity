@@ -109,4 +109,4 @@ Swagger documentation is avaiable in http://your-machine-ip/swagger-ui.html url.
 There is no need for security as per requirement so any application can access the API.
 
 # Constraints 
-Since , logfile is not confired any excpetion will now redirected to console. This is a scope of improvement for future work. But, if it is packaged as a container image , then console log can be an option.
+Since , logfile is not configured any excpetion will now redirected to console. This is a scope of improvement for future work. But, if it is packaged as a container image , then console log can be an option.
