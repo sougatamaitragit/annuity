@@ -49,21 +49,28 @@ Once you able to execute this , you can use any standard Rest client tool to use
 Service is available in below URL 
 http://your-machineip/replaymentschudele
 
-Service's HTTP Method is Post.
+   # Service's HTTP Method is: Post.
 
-Currently no security is consifured so no need to any HTTP Basic or Transport layer security.
+   # Security : Currently no security is configured so no need for any HTTP Basic or Transport layer security.
+ 
+   #  Sample Request
+  Following is a sample request to test the service . 
 
-Following is a sample request to Test the service .
-
-{
-"loanAmount": "5000",
-"nominalRate": "5.0",
-"duration": 24,
-"startDate": "2018-01-01T00:00:01Z"
-}
+    {
+    "loanAmount": "5000",
+    "nominalRate": "5.0",
+    "duration": 24,
+    "startDate": "2018-01-01T00:00:01Z"
+    }
 
 All fields are mandatory , input validation is provided in the application so wrong value will give a BAD_REQUEST error with HTTP 400 error code.
 For succes you will receive a HTTP 200 success code along with below structure response 
+   # Media Type
+    application/json
+   # Successful Response
+     http status code 200
+     
+     Response body is below
 
 {
 [
@@ -95,9 +102,15 @@ For succes you will receive a HTTP 200 success code along with below structure r
 ]
 }
 
-For any other server side error response will contain HTTP 500 error code. So while integrating the tool one should and must check http 200 code for success and any other code faiilure.
-
-A swagger documentation is also provided so that ,one can look into in deail about the request and response structure and data types and formats,
+ # Data Validation Failure
+   For invalid input HTTP Status code is 400 
+   
+ # Other Server Error
+ 
+   For any other server side error response will contain HTTP 500 error code. So while integrating the tool one should and must check  http 200 code for success and any other code faiilure.
+  
+  # API Documentations
+  A swagger documentation is also provided so that ,one can look into in deail about the request and response structure and data types  and formats,
 
 Swagger documentation is avaiable in http://your-machine-ip/swagger-ui.html url.
   
