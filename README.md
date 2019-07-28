@@ -1,9 +1,9 @@
  # Annuity Replayment Schedule
 
-This small guide will help user of this project / tool to download, compile, test and run annuity processing applicatiom.
+This small guide will help users of this project / tool to download, compile, test and run annuity processing application.
 
 # Project Technology 
-This project expose a REST api to caluclate repayment schudle , annuity amount , interest and principal amount , outsytanding interest amount for annutiy loan. This project is developed using java / spring boot 2 / swagger .
+This project exposes a REST api to caluclate repayment schudle , annuity amount , interest and principal amount , outstanding prinipal amount for annutiy loan. This project is developed using java / spring boot 2 / swagger .
 
 # Download the project and readme file.
 Please use below link to download the required files 
@@ -19,24 +19,24 @@ To run this application , jdk 1.8 and maven must be configured in the workstatio
 
 # Build / Compile application 
 
-To build the workspace , please use below command from workspace home directory , where pom.xml resides.  Once you download it from git annuitypayment will be your home directory . 
+To build the workspace , please use below command from workspace home/root directory , where pom.xml resides.  Once you download it from git annuitypayment will be your home directory . 
 
-To build / compile workspace and run unit tests please issue following command from home directory 
+To build / compile workspace and run unit tests please issue following command from command prompt . Current directory in command prompt must be project's home directory .
 
-mvn clean compile test.
+    mvn clean compile test.
 
 # Package Application 
 In order to package application as jar file , kindly issue following command from workspace home directory .
 
-mvn package 
+     mvn package 
 
-This will create a executable jar file under annuitypayment/target folder . Name of the jat file is annuitypayment-0.0.1.jar
+     This will create a executable jar file under annuitypayment/target folder . Name of the jat file is annuitypayment-0.0.1.jar
 
 # Execute the application 
 
-To execute the application kindly go to target folder mentioned above or you can copy jar file any folder of your choice and run below command
+To execute the application kindly go to target folder mentioned above or you can copy jar file any folder of your choice and run below command from command linke . 
 
-java -jar annuitypayment-0.0.1.jar
+    java -jar annuitypayment-0.0.1.jar
 
 # Application Access / Service Execution
 
